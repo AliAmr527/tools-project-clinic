@@ -12,6 +12,15 @@ pip install psycopg2 <br>
 and this command to initDB.py <br>
 python initDB.py
 
+#to run database
+you need to install postgres
+change the db information in file initDB.py to the info you entered when installing postgres
+and run the file initDB.py with command python initDB.py
+
 # to run front end
 you need to install angular and then run this command <br>
-ng serve
+ng new project<br>
+replace src made in project with the src provided in the repo
+run ng serve to run project
+
+
