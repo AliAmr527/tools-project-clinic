@@ -1,5 +1,5 @@
 # tools-project-clinic
-this project contains: 
--front end layer done in angular
--back end layer done in python
--databse layer done in postgres
+this project contains: <br>
+-front end layer done in angular<br>
+-back end layer done in python<br>
+-databse layer done in postgres<br>
