@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  db:
+    build: ./db
+    restart: always
+    environment:
+      POSTGRES_DB: flaskDB2
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: alag3107
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  web:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  front:
+    build: ./angular
+    volumes:
+      - './angular:/angularApp'
+    ports:
+      - "4400:4400"
+    depends_on:
+      - web
+
+volumes:
+    db:
+      driver: local
